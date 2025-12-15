@@ -1,388 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adrián Caballero Camacho | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Adrián Caballero | Ingeniero Informático & Desarrollador Full-Stack</title>
+  <meta name="description"
+        content="Portfolio personal de Adrián Caballero, ingeniero informático y desarrollador full-stack. Proyectos web, aplicaciones, experiencia y formación." />
+  <meta property="og:title" content="Adrián Caballero | Portfolio" />
+  <meta property="og:description"
+        content="Ingeniero Informático y desarrollador full-stack. Proyectos, experiencia y formación." />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f7f3;
-      color: #3a3a3a;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* Animaciones generales */
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(40px) scale(0.97);
-      transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    [data-animate].visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    /* Animación de título */
-    #inicio h2 {
-      animation: fadeInTitle 1.4s ease-in-out forwards;
-    }
-
-    @keyframes fadeInTitle {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* 🔹 Evitar que el menú se solape con el contenido */
-    @media (min-width: 1024px) {
-      body {
-        padding-right: 80px; /* espacio para el menú lateral */
-      }
-    }
-
-    /* Hover en proyectos */
-    .project-card {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(50, 80, 120, 0.2);
-    }
-
-    /* Animación vistosa para el texto de Sobre mí */
-    #sobremi p span {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: revealLine 0.7s forwards ease-out;
-      animation-play-state: paused;
-    }
-
-    @keyframes revealLine {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 1023px) {
-    #side-menu { display: none !important; }
-    }
-
-    @keyframes shineMove {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-    }
-
-
-  /* 🔹 Menú lateral completamente transparente */
-  #side-menu {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    box-shadow: none !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 4px;
-    z-index: 100;
-  }
-
-
-  /* Botones del menú */
-  .menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: rgba(28, 61, 90, 0.1);
-    border-radius: 50%;
-    font-size: 18px;
-    color: #1c3d5a;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  /* Hover */
-  .menu-btn:hover {
-    transform: scale(1.15);
-    background-color: #1c3d5a;
-    color: #fff;
-  }
-
-  /* Efecto visual al hacer clic */
-  .menu-btn:active {
-    transform: scale(0.95);
-  }
-
-  /* Estado activo: la sección visible */
-  .menu-btn.active {
-    background-color: #1c3d5a;
-    color: white;
-    box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
-  }
-
-
-    /* Efecto visual al hacer clic */
-    .menu-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* 🔹 Estilos específicos para el menú móvil */
-  #mobile-menu .mobile-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  #mobile-menu .mobile-link:hover {
-    background-color: rgba(28, 61, 90, 0.1);
-    transform: translateY(-2px);
-  }
-
-  /* Fondo elegante general */
-  #conocimientos {
-    background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Mejora de contraste visual en bordes */
-  #conocimientos .border-c8c8c8 {
-    border-color: #b7b7b7 !important;
-  }
-
-  #conocimientos .border-c0bbb5 {
-    border-color: #a49f99 !important;
-  }
-
-  /* Hover y animación sutil en las barras */
-  .progress-bar:hover {
-    filter: brightness(1.15);
-    transform: scale(1.03);
-    transition: all 0.3s ease;
-  }
-
-  #softskills {
-    background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
-  }
-
-  #softskills .hover\:shadow-lg:hover {
-    box-shadow: 0 10px 25px rgba(28, 61, 90, 0.15);
-  }
-
-  #softskills svg {
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  #softskills div:hover svg {
-    transform: scale(1.1);
-    color: #3b82f6;
-  }
-
-  #softskills span {
-    letter-spacing: 0.3px;
-  }
-
-  /* --- Estilo general del menú lateral --- */
-  #side-menu svg {
-    stroke: #011c40;
-    transition: transform 0.3s ease, stroke 0.3s ease;
-  }
-
-  /* Hover: icono se hace más grande y blanco */
-  #side-menu .menu-btn:hover {
-    background-color: #1a293f;
-    color: white;
-  }
-
-  #side-menu .menu-btn:hover svg {
-    stroke: white;
-    transform: scale(1.2);
-  }
-
-  /* Estado activo: sección actual visible */
-  #side-menu .menu-btn.active {
-    background-color: #023859;
-    color: white;
-    box-shadow: 0 0 10px #011c40;
-  }
-
-  #side-menu .menu-btn.active svg {
-    stroke: white;
-    transform: scale(1.2);
-  }
-
-  /* --- CORRECCIONES DEL MENÚ MÓVIL --- */
-
-  /* Quita el fondo circular de los enlaces móviles */
-  #mobile-menu .menu-btn {
-    background: none !important;
-    border-radius: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    box-shadow: none !important;
-    justify-content: flex-start !important;
-    padding: 8px 0 !important;
-  }
-
-  /* Color de texto uniforme */
-  #mobile-menu .menu-btn span {
-    color: #1c3d5a !important;
-    white-space: nowrap; /* fuerza que no se parta en dos líneas */
-  }
-
-  /* Corrige hover */
-  #mobile-menu .menu-btn:hover {
-    background: rgba(28, 61, 90, 0.05) !important;
-    color: #1c3d5a !important;
-    transform: none !important;
-  }
-
-  /* 🔹 Aparición progresiva (de arriba a abajo) */
-  .fade-in-sequence {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .fade-in-sequence.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fade-in-sequence {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .fade-in-sequence.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .fade-in-sequence {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .fade-in-sequence.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* --- Animación secuencial para Soft Skills (solo borde + icono) --- */
-  .softskill-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .softskill-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .softskill-card svg,
-  .softskill-card {
-    transition: border-color 0.8s ease, color 0.8s ease;
-  }
-
-  .softskill-card.animating svg {
-    color: black !important;
-  }
-
-  .softskill-card.animating {
-    border-color: black !important;
-  }
-
-  /* --- Animación secuencial para proyectos --- */
-  .project-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    border: 1.5px solid transparent;
-  }
-
-  .project-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .project-card.animating {
-    border-color: black !important;
-  }
-
-  .project-card h3 {
-    transition: color 0.6s ease;
-  }
-
-  .project-card.animating h3 {
-    color: black !important;
-  }
-
-  .project-card {
-  border: 1.5px solid transparent;
-  transition: all 0.3s ease;
-  }
-
-.project-card:hover {
-  border-color: #000000; /* negro */
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  /* ✨ Texto brillante */
-  .shine {
-    background: linear-gradient(90deg, #1c3d5a, #3b82f6, #1c3d5a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200%;
-    animation: shineMove 4s linear infinite;
-  }
-  @keyframes shineMove {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  #typing-text {
-    color: #051f35 !important;              /* más oscuro */
-    position: relative;
-    z-index: 10;                             /* por encima de la capa */
-    text-shadow: 0 1px 2px rgba(255,255,255,.9), 
-                0 2px 10px rgba(0,0,0,.12); /* legibilidad sobre blur */
-  }
-
-
-
-
-  </style>
 </head>
 
 <body class="loading">
@@ -523,33 +156,6 @@
 
 </div>
 
-
-<!-- Script -->
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const icon = document.getElementById('menu-icon');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    // Cambia el icono (☰ ↔ ✕)
-    if (!menu.classList.contains('hidden')) {
-      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
-    } else {
-      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
-    }
-  });
-
-  // Cerrar menú al hacer clic en un enlace
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
-    });
-  });
-
-</script>
-
   <!-- Inicio -->
   <section id="inicio" class="min-h-screen relative flex items-center justify-center px-6 text-center overflow-hidden" data-animate>
     
@@ -567,7 +173,7 @@
 
         <p id="typing-text" class="text-lg md:text-xl text-gray-700 mb-8"></p>
 
-        <a href="pdf/CV_Vitae_Adrian_Caballero.pdf" download
+        <a href="certificados/CV_Vitae_Adrian_Caballero.pdf" download
           class="relative inline-block px-8 py-3 border border-[#011C40] rounded-full text-[#011C40] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
           <span class="shine-text">Descargar CV</span>
         </a>
@@ -579,115 +185,7 @@
 
   <!-- particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 70 },
-        color: { value: ["#75020f", "#51080d", "#2b0307"] },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: 3 },
-        line_linked: { enable: true, distance: 150, color: "#51080d", opacity: 0.40, width: 1 },
-        move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: false } },
-        modes: { grab: { distance: 130, line_linked: { opacity: 0.5 } } }
-      },
-      retina_detect: true
-    });
-  </script>
 </section>
-
-
-<style>
-  
-#inicio {
-  position: relative;
-  background: linear-gradient(120deg, #f9f7f3, #ebe8e2, #f9f7f3);
-  background-size: 300% 300%;
-  animation: gradientShift 12s ease infinite;
-}
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Canvas de partículas siempre detrás */
-#particles-js {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-/* Escudo general que mantiene proporción */
-.hero-shield {
-  position: relative;
-  padding: 24px 32px;
-  border-radius: 28px;
-}
-
-/* Capa de vidrio casi transparente */
-.hero-glass {
-  background: rgba(255, 255, 255, 0); /* casi transparente */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 28px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  z-index: 10;
-}
-
-
-  /* Asegura que el texto esté encima */
-  .hero-shield > .relative {
-    position: relative;
-    z-index: 20;
-  }
-
-  /* Brillo del nombre */
-  .shine {
-    background: linear-gradient(90deg, #1c3d5a, #3b82f6, #1c3d5a);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200%;
-    animation: shineMove 4s linear infinite;
-  }
-  @keyframes shineMove {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  /* Texto subtítulo visible encima del vidrio */
-  #typing-text {
-    color: #011c40;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 2px 10px rgba(0,0,0,0.15);
-    z-index: 30;
-    position: relative;
-  }
-
-  /* 🔧 Arreglo: permitir scroll en pantallas grandes */
-  @media (min-width: 1024px) {
-    html, body {
-      height: auto !important;
-      min-height: 100vh;
-      overflow-y: auto !important;
-    }
-  }
-
-    /* 🔧 Forzar que SIEMPRE exista scroll */
-  html, body {
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-  }
-
-
-</style>
 
 <!-- Sobre mí -->
 <section id="sobremi" class="py-24 max-w-6xl mx-auto px-6" data-animate>
@@ -728,165 +226,164 @@
 </style>
 
 
-  <!-- Soft Skills -->
-<section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]">Soft Skills</h3>
+    <!-- Soft Skills -->
+    <section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]">Soft Skills</h3>
 
-    <!-- Contenedor de insignias -->
-    <div class="flex flex-wrap justify-center gap-10">
+        <!-- Contenedor de insignias -->
+        <div class="flex flex-wrap justify-center gap-10">
 
-      <!-- Proactividad -->
-      <div class="softskill-card flex flex-col items-center justify-center gap-3
-                  bg-white/90 rounded-2xl shadow-md
-                  border-[1.5px] border-[#c8c8c8]
-                  w-32 h-32
-                  hover:shadow-lg hover:scale-[1.05]
-                  transition-all duration-300">
+          <!-- Proactividad -->
+          <div class="softskill-card flex flex-col items-center justify-center gap-3
+                      bg-white/90 rounded-2xl shadow-md
+                      border-[1.5px] border-[#c8c8c8]
+                      w-32 h-32
+                      hover:shadow-lg hover:scale-[1.05]
+                      transition-all duration-300">
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 
-        1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 
-        1 .913-.143Z" clip-rule="evenodd" />
-      </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 
+            1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 
+            1 .913-.143Z" clip-rule="evenodd" />
+          </svg>
 
 
 
-        <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-          Proactividad
-        </span>
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+              Proactividad
+            </span>
+          </div>
+
+        <!-- Trabajo en equipo -->
+        <div class="softskill-card flex flex-col items-center justify-center gap-3
+                    bg-white/90 rounded-2xl shadow-md
+                    border-[1.5px] border-[#c8c8c8]
+                    w-32 h-32
+                    hover:shadow-lg hover:scale-[1.05]
+                    transition-all duration-300">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+          <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 
+          0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 
+          0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 
+          0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+          <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 
+          0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 
+          1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+        </svg>
+
+
+          <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            Trabajo<br>en equipo
+          </span>
+        </div>
+
+
+
+          <!-- Pensamiento analítico -->
+          <div class="softskill-card flex flex-col items-center justify-center gap-3
+                      bg-white/90 rounded-2xl shadow-md
+                      border-[1.5px] border-[#c8c8c8]
+                      w-32 h-32
+                      hover:shadow-lg hover:scale-[1.05]
+                      transition-all duration-300">
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M11.622 1.602a.75.75 0 0 1 .756 0l2.25 1.313a.75.75 0 0 1-.756 
+            1.295L12 3.118 10.128 4.21a.75.75 0 1 1-.756-1.295l2.25-1.313ZM5.898 5.81a.75.75 0 0 1-.27 1.025l-1.14.665 
+            1.14.665a.75.75 0 1 1-.756 1.295L3.75 8.806v.944a.75.75 0 0 1-1.5 0V7.5a.75.75 0 0 1 .372-.648l2.25-1.312a.75.75 0 0 
+            1 1.026.27Zm12.204 0a.75.75 0 0 1 1.026-.27l2.25 1.312a.75.75 0 0 1 .372.648v2.25a.75.75 0 0 1-1.5 0v-.944l-1.122.654a.75.75 0 1 
+            1-.756-1.295l1.14-.665-1.14-.665a.75.75 0 0 1-.27-1.025Zm-9 5.25a.75.75 0 0 1 1.026-.27L12 11.882l1.872-1.092a.75.75 0 1 1 .756 
+            1.295l-1.878 1.096V15a.75.75 0 0 1-1.5 0v-1.82l-1.878-1.095a.75.75 0 0 1-.27-1.025ZM3 13.5a.75.75 0 0 1 .75.75v1.82l1.878 1.095a.75.75 0 
+            1 1-.756 1.295l-2.25-1.312a.75.75 0 0 1-.372-.648v-2.25A.75.75 0 0 1 3 13.5Zm18 0a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.372.648l-2.25 
+            1.312a.75.75 0 1 1-.756-1.295l1.878-1.096V14.25a.75.75 0 0 1 .75-.75Zm-9 5.25a.75.75 0 0 1 .75.75v.944l1.122-.654a.75.75 0 1 
+            1 .756 1.295l-2.25 1.313a.75.75 0 0 1-.756 0l-2.25-1.313a.75.75 0 1 1 .756-1.295l1.122.654V19.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+          </svg>
+
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+              Pensamiento Analítico
+            </span>
+          </div>
+
+
+          <!-- Habilidades Comunicativas -->
+          <div class="softskill-card flex flex-col items-center justify-center gap-3
+                      bg-white/90 rounded-2xl shadow-md
+                      border-[1.5px] border-[#c8c8c8]
+                      w-32 h-32
+                      hover:shadow-lg hover:scale-[1.05]
+                      transition-all duration-300">
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z" />
+            <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
+          </svg>
+
+
+
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+              Habilidades Comunicativas
+            </span>
+          </div>
+
+
+          <!-- Adaptabilidad -->
+          <div class="softskill-card flex flex-col items-center justify-center gap-3
+                      bg-white/90 rounded-2xl shadow-md
+                      border-[1.5px] border-[#c8c8c8]
+                      w-32 h-32
+                      hover:shadow-lg hover:scale-[1.05]
+                      transition-all duration-300">
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 
+            2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 
+            1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 
+            0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 
+            .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 
+            1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 
+            0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 
+            0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 
+            0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 
+            1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 
+            2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z" />
+          </svg>
+
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+              Adaptabilidad
+            </span>
+          </div>
+
+
+          <!-- 🎯 Orientado a objetivos -->
+          <div class="softskill-card flex flex-col items-center justify-center gap-3
+                      bg-white/90 rounded-2xl shadow-md
+                      border-[1.5px] border-[#c8c8c8]
+                      w-32 h-32
+                      hover:shadow-lg hover:scale-[1.05]
+                      transition-all duration-300">
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 
+            1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 
+            0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 
+            0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 
+            1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 
+            4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+          </svg>
+
+
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+              Orientado a Objetivos
+            </span>
+          </div>
+
+
+
+        </div>
       </div>
-
-    <!-- Trabajo en equipo -->
-    <div class="softskill-card flex flex-col items-center justify-center gap-3
-                bg-white/90 rounded-2xl shadow-md
-                border-[1.5px] border-[#c8c8c8]
-                w-32 h-32
-                hover:shadow-lg hover:scale-[1.05]
-                transition-all duration-300">
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-      <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 
-      0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 
-      0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 
-      0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-      <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 
-      0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 
-      1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-    </svg>
-
-
-      <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-        Trabajo<br>en equipo
-      </span>
-    </div>
-
-
-
-      <!-- Pensamiento analítico -->
-      <div class="softskill-card flex flex-col items-center justify-center gap-3
-                  bg-white/90 rounded-2xl shadow-md
-                  border-[1.5px] border-[#c8c8c8]
-                  w-32 h-32
-                  hover:shadow-lg hover:scale-[1.05]
-                  transition-all duration-300">
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path fill-rule="evenodd" d="M11.622 1.602a.75.75 0 0 1 .756 0l2.25 1.313a.75.75 0 0 1-.756 
-        1.295L12 3.118 10.128 4.21a.75.75 0 1 1-.756-1.295l2.25-1.313ZM5.898 5.81a.75.75 0 0 1-.27 1.025l-1.14.665 
-        1.14.665a.75.75 0 1 1-.756 1.295L3.75 8.806v.944a.75.75 0 0 1-1.5 0V7.5a.75.75 0 0 1 .372-.648l2.25-1.312a.75.75 0 0 
-        1 1.026.27Zm12.204 0a.75.75 0 0 1 1.026-.27l2.25 1.312a.75.75 0 0 1 .372.648v2.25a.75.75 0 0 1-1.5 0v-.944l-1.122.654a.75.75 0 1 
-        1-.756-1.295l1.14-.665-1.14-.665a.75.75 0 0 1-.27-1.025Zm-9 5.25a.75.75 0 0 1 1.026-.27L12 11.882l1.872-1.092a.75.75 0 1 1 .756 
-        1.295l-1.878 1.096V15a.75.75 0 0 1-1.5 0v-1.82l-1.878-1.095a.75.75 0 0 1-.27-1.025ZM3 13.5a.75.75 0 0 1 .75.75v1.82l1.878 1.095a.75.75 0 
-        1 1-.756 1.295l-2.25-1.312a.75.75 0 0 1-.372-.648v-2.25A.75.75 0 0 1 3 13.5Zm18 0a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-.372.648l-2.25 
-        1.312a.75.75 0 1 1-.756-1.295l1.878-1.096V14.25a.75.75 0 0 1 .75-.75Zm-9 5.25a.75.75 0 0 1 .75.75v.944l1.122-.654a.75.75 0 1 
-        1 .756 1.295l-2.25 1.313a.75.75 0 0 1-.756 0l-2.25-1.313a.75.75 0 1 1 .756-1.295l1.122.654V19.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-      </svg>
-
-        <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-          Pensamiento Analítico
-        </span>
-      </div>
-
-
-      <!-- Habilidades Comunicativas -->
-      <div class="softskill-card flex flex-col items-center justify-center gap-3
-                  bg-white/90 rounded-2xl shadow-md
-                  border-[1.5px] border-[#c8c8c8]
-                  w-32 h-32
-                  hover:shadow-lg hover:scale-[1.05]
-                  transition-all duration-300">
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z" />
-        <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
-      </svg>
-
-
-
-        <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-          Habilidades Comunicativas
-        </span>
-      </div>
-
-
-      <!-- Adaptabilidad -->
-      <div class="softskill-card flex flex-col items-center justify-center gap-3
-                  bg-white/90 rounded-2xl shadow-md
-                  border-[1.5px] border-[#c8c8c8]
-                  w-32 h-32
-                  hover:shadow-lg hover:scale-[1.05]
-                  transition-all duration-300">
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 
-        2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 
-        1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 
-        0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 
-        .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 
-        1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 
-        0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 
-        0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 
-        0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 
-        1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 
-        2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z" />
-      </svg>
-
-        <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-          Adaptabilidad
-        </span>
-      </div>
-
-
-      <!-- 🎯 Orientado a objetivos -->
-      <div class="softskill-card flex flex-col items-center justify-center gap-3
-                  bg-white/90 rounded-2xl shadow-md
-                  border-[1.5px] border-[#c8c8c8]
-                  w-32 h-32
-                  hover:shadow-lg hover:scale-[1.05]
-                  transition-all duration-300">
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 
-        1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 
-        0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 
-        0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 
-        1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 
-        4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-      </svg>
-
-
-        <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
-          Orientado a Objetivos
-        </span>
-      </div>
-
-
-
-    </div>
-  </div>
-</section>
-
+    </section>
 
 
 <!-- 🔹 Conocimientos Tecnológicos -->
@@ -1506,367 +1003,9 @@
     © 2025 Adrián Caballero Camacho – Todos los derechos reservados.
   </footer>
 
-  <!-- Animación al hacer scroll -->
-  <script>
-    const elements = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    elements.forEach(el => observer.observe(el));
-  </script>
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="script.js"></script>
 
-  <!-- Activador de animación Sobre mí -->
-  <script>
-    const sobreMi = document.querySelector('#sobremi');
-    const spans = document.querySelectorAll('#sobremi p span');
-
-    const obsSobreMi = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          spans.forEach((span, i) => {
-            span.style.animationDelay = `${i * 0.3}s`;
-            span.style.animationPlayState = 'running';
-          });
-          obsSobreMi.unobserve(sobreMi);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    obsSobreMi.observe(sobreMi);
-  </script>
-
-  <!-- Animación de barras -->
-  <script>
-    const bars = document.querySelectorAll('.progress-bar');
-    const observerBars = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const value = parseInt(bar.getAttribute('data-value'));
-          const label = bar.parentElement.previousElementSibling.querySelector('.progress-text');
-          
-          bar.style.transition = 'width 1.8s cubic-bezier(0.23, 1, 0.32, 1)';
-          bar.style.width = value + '%';
-
-          let count = 0;
-          const updateNumber = setInterval(() => {
-            if (count >= value) clearInterval(updateNumber);
-            else {
-              count++;
-              label.textContent = count + '%';
-            }
-          }, 20);
-          observerBars.unobserve(bar);
-        }
-      });
-    }, { threshold: 0.3 });
-    bars.forEach(bar => observerBars.observe(bar));
-  </script>
-  
-  <script>
-    // Detectar la sección visible y resaltar el icono activo
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("#side-menu .menu-btn");
-
-    const observerMenu = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute("id");
-        const link = document.querySelector(`#side-menu a[href="#${id}"]`);
-        if (entry.isIntersecting) {
-          navLinks.forEach(btn => btn.classList.remove("active"));
-          link?.classList.add("active");
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(section => observerMenu.observe(section));
-  </script>
-
-  <script>
-  // 🔹 Ordenar bloques de progreso de mayor a menor según data-value
-  document.addEventListener("DOMContentLoaded", () => {
-    const containers = document.querySelectorAll("#conocimientos .space-y-8");
-
-    containers.forEach(container => {
-      const items = Array.from(container.children);
-
-      // Ordenar por valor numérico del atributo data-value
-      items.sort((a, b) => {
-        const valueA = parseInt(a.querySelector('.progress-bar').getAttribute('data-value'));
-        const valueB = parseInt(b.querySelector('.progress-bar').getAttribute('data-value'));
-        return valueB - valueA; // mayor a menor
-      });
-
-      // Reinsertar en orden
-      items.forEach(item => container.appendChild(item));
-    });
-  });
-  </script>
-
-  <script>
-    const fadeItems = document.querySelectorAll('.fade-in-sequence');
-    const fadeObserver = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 200); // 200 ms entre cada bloque
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    fadeItems.forEach(item => fadeObserver.observe(item));
-  </script>
-
-  <script>
-    // Animación secuencial de Soft Skills (solo borde + icono)
-    const softskills = document.querySelectorAll("#softskills .softskill-card");
-
-    const softskillsObserver = new IntersectionObserver(entries => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            const card = entry.target;
-            card.classList.add("visible", "animating");
-            setTimeout(() => card.classList.remove("animating"), 800); // vuelve al color original
-          }, i * 250); // 250 ms entre tarjetas
-          softskillsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    softskills.forEach(card => softskillsObserver.observe(card));
-  </script>
-
-  <script>
-    // Animación secuencial de los proyectos (borde + título)
-    const projects = document.querySelectorAll("#proyectos .project-card");
-
-    const projectsObserver = new IntersectionObserver(entries => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            const card = entry.target;
-            card.classList.add("visible", "animating");
-            setTimeout(() => card.classList.remove("animating"), 800);
-          }, i * 300); // 300 ms entre tarjetas
-          projectsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    projects.forEach(card => projectsObserver.observe(card));
-  </script>
-
-</body>
-
-<head>
-  <style>
-  /* LOADER INICIAL */
-  body.loading {
-    overflow: hidden; /* evita scroll mientras carga */
-  }
-
-  #loader-overlay {
-    position: fixed;
-    inset: 0;
-    background: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999; /* por encima de todo */
-    color: #ffffff;
-  }
-
-  .loader-content {
-    text-align: center;
-  }
-
-  /* Texto "Bienvenido" */
-  #loader-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateY(20px); /* empieza un poco más abajo */
-    animation: loaderTextUp 0.8s ease-out forwards;
-    animation-delay: 0.2s; /* empieza a subir un pelín después */
-  }
-
-  /* Animación de subida sutil */
-  @keyframes loaderTextUp {
-    to {
-      opacity: 1;
-      transform: translateY(-5px); /* acaba ligeramente por encima */
-    }
-  }
-
-  /* Barra de carga */
-  .loader-bar {
-    width: 260px;
-    max-width: 70vw;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    overflow: hidden;
-    margin: 28px auto 0 auto;
-  }
-
-  #loader-bar-fill {
-    height: 100%;
-    width: 0;
-    background: #ffffff;
-    border-radius: 999px;
-    transition: width 1.5s ease-out; /* dura aprox. 3s */
-  }
-
-  /* LOADER INICIAL */
-body.loading {
-  overflow: hidden;
-}
-
-  #loader-overlay {
-    position: fixed;
-    inset: 0;
-    background: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-  }
-
-  .loader-content {
-    text-align: center;
-  }
-
-  #loader-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: #ffffff;
-    opacity: 0;
-    transform: translateY(25px);
-    animation: floatIn 1.2s ease-out forwards;
-  }
-
-  /* Efecto de subida suave */
-  @keyframes floatIn {
-    0% { opacity: 0; transform: translateY(25px); }
-    100% { opacity: 1; transform: translateY(-5px); }
-  }
-
-  /* Glow al aparecer cada letra */
-  .letter-glow {
-    animation: glow 0.4s ease-out forwards;
-  }
-
-  @keyframes glow {
-    0% { opacity: 0; filter: blur(6px); }
-    100% { opacity: 1; filter: blur(0); }
-  }
-
-  /* Rebote pequeño al finalizar */
-  #loader-text.bounce {
-    animation: bounce 0.6s ease-out;
-  }
-
-  @keyframes bounce {
-    0% { transform: translateY(-5px); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(-5px); }
-  }
-
-  .loader-bar {
-    width: 260px;
-    max-width: 70vw;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    overflow: hidden;
-    margin: 28px auto 0 auto;
-  }
-
-  #loader-bar-fill {
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #ffffff, #bbbbbb, #ffffff);
-    background-size: 200%;
-    animation: barGlow 1.5s linear infinite;
-    border-radius: 999px;
-    transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
-  }
-
-  @keyframes barGlow {
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-  }
-
-  </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay      = document.getElementById("loader-overlay");
-  const barFill      = document.getElementById("loader-bar-fill");
-  const loaderTextEl = document.getElementById("loader-text");
-  const loaderText   = "Bienvenido";
-  const heroText   = "Ingeniero Informático • Desarrollador Full-Stack";
-  const typingEl   = document.getElementById("typing-text");
-  let heroIndex    = 0;
-
-  function typeHero() {
-    if (!typingEl) return;
-    if (heroIndex < heroText.length) {
-      typingEl.textContent += heroText.charAt(heroIndex);
-      heroIndex++;
-      setTimeout(typeHero, 55);
-    }
-  }
-
-  let i = 0;
-  function typeLoader() {
-    if (!loaderTextEl) return;
-    if (i < loaderText.length) {
-      const span = document.createElement("span");
-      span.textContent = loaderText.charAt(i);
-      span.classList.add("letter-glow");
-      loaderTextEl.appendChild(span);
-      i++;
-      setTimeout(typeLoader, 70);
-    }
-  }
-
-  typeLoader();
-
-  if (barFill) {
-    setTimeout(() => {
-      barFill.style.width = "100%";
-    }, 300);
-  }
-
-  setTimeout(() => {
-    if (overlay) {
-      overlay.style.transition = "opacity 0.7s ease";
-      overlay.style.opacity = "0";
-
-      setTimeout(() => {
-        overlay.style.display = "none";
-        typeHero();
-      }, 700);
-    } else {
-      typeHero();
-    }
-  }, 3000);
-});
-</script>
-
-
-</head>
-
-</html>
+</body> 

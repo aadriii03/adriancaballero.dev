@@ -1,0 +1,591 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f7f3;
+  color: #3a3a3a;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animaciones generales */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Animación de título */
+#inicio h2 {
+  animation: fadeInTitle 1.4s ease-in-out forwards;
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Evitar que el menú se solape con el contenido */
+@media (min-width: 1024px) {
+  body {
+    padding-right: 80px; /* espacio para el menú lateral */
+  }
+}
+
+/* Hover en proyectos */
+.project-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(50, 80, 120, 0.2);
+}
+
+/* Animación vistosa para el texto de Sobre mí */
+#sobremi p span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealLine 0.7s forwards ease-out;
+  animation-play-state: paused;
+}
+
+@keyframes revealLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+#side-menu { display: none !important; }
+}
+
+@keyframes shineMove {
+0% { background-position: 200% 0; }
+100% { background-position: -200% 0; }
+}
+
+
+/* 🔹 Menú lateral completamente transparente */
+#side-menu {
+background: transparent !important;
+backdrop-filter: none !important;
+box-shadow: none !important;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+padding: 6px 4px;
+z-index: 100;
+}
+
+
+/* Botones del menú */
+.menu-btn {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 36px;
+height: 36px;
+background-color: rgba(28, 61, 90, 0.1);
+border-radius: 50%;
+font-size: 18px;
+color: #1c3d5a;
+transition: all 0.3s ease;
+position: relative;
+}
+
+/* Hover */
+.menu-btn:hover {
+transform: scale(1.15);
+background-color: #1c3d5a;
+color: #fff;
+}
+
+/* Efecto visual al hacer clic */
+.menu-btn:active {
+transform: scale(0.95);
+}
+
+/* Estado activo: la sección visible */
+.menu-btn.active {
+background-color: #1c3d5a;
+color: white;
+box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
+}
+
+
+/* Efecto visual al hacer clic */
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* 🔹 Estilos específicos para el menú móvil */
+#mobile-menu .mobile-link {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 10px 20px;
+border-radius: 8px;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mobile-menu .mobile-link:hover {
+background-color: rgba(28, 61, 90, 0.1);
+transform: translateY(-2px);
+}
+
+/* Fondo elegante general */
+#conocimientos {
+background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
+box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Mejora de contraste visual en bordes */
+#conocimientos .border-c8c8c8 {
+border-color: #b7b7b7 !important;
+}
+
+#conocimientos .border-c0bbb5 {
+border-color: #a49f99 !important;
+}
+
+/* Hover y animación sutil en las barras */
+.progress-bar:hover {
+filter: brightness(1.15);
+transform: scale(1.03);
+transition: all 0.3s ease;
+}
+
+#softskills {
+background: linear-gradient(135deg, #f9f9f7, #ebe8e3);
+box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+#softskills .hover\:shadow-lg:hover {
+box-shadow: 0 10px 25px rgba(28, 61, 90, 0.15);
+}
+
+#softskills svg {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#softskills div:hover svg {
+transform: scale(1.1);
+color: #3b82f6;
+}
+
+#softskills span {
+letter-spacing: 0.3px;
+}
+
+/* --- Estilo general del menú lateral --- */
+#side-menu svg {
+stroke: #011c40;
+transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
+/* Hover: icono se hace más grande y blanco */
+#side-menu .menu-btn:hover {
+background-color: #1a293f;
+color: white;
+}
+
+#side-menu .menu-btn:hover svg {
+stroke: white;
+transform: scale(1.2);
+}
+
+/* Estado activo: sección actual visible */
+#side-menu .menu-btn.active {
+background-color: #023859;
+color: white;
+box-shadow: 0 0 10px #011c40;
+}
+
+#side-menu .menu-btn.active svg {
+stroke: white;
+transform: scale(1.2);
+}
+
+/* --- CORRECCIONES DEL MENÚ MÓVIL --- */
+
+/* Quita el fondo circular de los enlaces móviles */
+#mobile-menu .menu-btn {
+background: none !important;
+border-radius: 0 !important;
+width: auto !important;
+height: auto !important;
+box-shadow: none !important;
+justify-content: flex-start !important;
+padding: 8px 0 !important;
+}
+
+/* Color de texto uniforme */
+#mobile-menu .menu-btn span {
+color: #1c3d5a !important;
+white-space: nowrap; /* fuerza que no se parta en dos líneas */
+}
+
+/* Corrige hover */
+#mobile-menu .menu-btn:hover {
+background: rgba(28, 61, 90, 0.05) !important;
+color: #1c3d5a !important;
+transform: none !important;
+}
+
+/* 🔹 Aparición progresiva (de arriba a abajo) */
+.fade-in-sequence {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in-sequence.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.fade-in-sequence {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in-sequence.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.fade-in-sequence {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in-sequence.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* --- Animación secuencial para Soft Skills (solo borde + icono) --- */
+.softskill-card {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.softskill-card.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.softskill-card svg,
+.softskill-card {
+transition: border-color 0.8s ease, color 0.8s ease;
+}
+
+.softskill-card.animating svg {
+color: black !important;
+}
+
+.softskill-card.animating {
+border-color: black !important;
+}
+
+/* --- Animación secuencial para proyectos --- */
+.project-card {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+border: 1.5px solid transparent;
+}
+
+.project-card.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.project-card.animating {
+border-color: black !important;
+}
+
+.project-card h3 {
+transition: color 0.6s ease;
+}
+
+.project-card.animating h3 {
+color: black !important;
+}
+
+.project-card {
+border: 1.5px solid transparent;
+transition: all 0.3s ease;
+}
+
+.project-card:hover {
+border-color: #000000; /* negro */
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Texto brillante */
+.shine {
+background: linear-gradient(90deg, #1c3d5a, #3b82f6, #1c3d5a);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-size: 200%;
+animation: shineMove 4s linear infinite;
+}
+@keyframes shineMove {
+0% { background-position: 200% 0; }
+100% { background-position: -200% 0; }
+}
+
+#typing-text {
+color: #051f35 !important;              /* más oscuro */
+position: relative;
+z-index: 10;                             /* por encima de la capa */
+text-shadow: 0 1px 2px rgba(255,255,255,.9), 
+            0 2px 10px rgba(0,0,0,.12); /* legibilidad sobre blur */
+}
+
+/* Sección Inicio */
+#inicio {
+position: relative;
+background: linear-gradient(120deg, #f9f7f3, #ebe8e2, #f9f7f3);
+background-size: 300% 300%;
+animation: gradientShift 12s ease infinite;
+}
+@keyframes gradientShift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+/* Canvas de partículas siempre detrás */
+#particles-js {
+position: absolute;
+inset: 0;
+z-index: 0;
+}
+
+/* Escudo general que mantiene proporción */
+.hero-shield {
+position: relative;
+padding: 24px 32px;
+border-radius: 28px;
+}
+
+/* Capa de vidrio casi transparente */
+.hero-glass {
+background: rgba(255, 255, 255, 0); /* casi transparente */
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border-radius: 28px;
+box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+border: 1px solid rgba(255,255,255,0.06);
+z-index: 10;
+}
+
+/* Asegura que el texto esté encima */
+.hero-shield > .relative {
+position: relative;
+z-index: 20;
+}
+
+/* Texto subtítulo visible encima del vidrio */
+#typing-text {
+color: #011c40;
+text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 2px 10px rgba(0,0,0,0.15);
+z-index: 30;
+position: relative;
+}
+
+/* 🔧 Arreglo: permitir scroll en pantallas grandes */
+@media (min-width: 1024px) {
+html, body {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: auto !important;
+}
+}
+
+/* 🔧 Forzar que SIEMPRE exista scroll */
+html, body {
+height: auto !important;
+min-height: 100vh !important;
+overflow-y: auto !important;
+overflow-x: hidden !important;
+}
+
+/* Sobre mí */
+#sobremi img {
+opacity: 0;
+transform: translateY(30px);
+transition: all 1s ease;
+}
+
+#sobremi.visible img {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* LOADER INICIAL */
+body.loading {
+overflow: hidden; /* evita scroll mientras carga */
+}
+
+#loader-overlay {
+position: fixed;
+inset: 0;
+background: #000000;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999; /* por encima de todo */
+color: #ffffff;
+}
+
+.loader-content {
+text-align: center;
+}
+
+/* Texto "Bienvenido" */
+#loader-text {
+font-family: 'Playfair Display', serif;
+font-size: 2.3rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+opacity: 0;
+transform: translateY(20px); /* empieza un poco más abajo */
+animation: loaderTextUp 0.8s ease-out forwards;
+animation-delay: 0.2s; /* empieza a subir un pelín después */
+}
+
+/* Animación de subida sutil */
+@keyframes loaderTextUp {
+to {
+  opacity: 1;
+  transform: translateY(-5px); /* acaba ligeramente por encima */
+}
+}
+
+/* Barra de carga */
+.loader-bar {
+width: 260px;
+max-width: 70vw;
+height: 6px;
+background: rgba(255, 255, 255, 0.18);
+border-radius: 999px;
+overflow: hidden;
+margin: 28px auto 0 auto;
+}
+
+#loader-bar-fill {
+height: 100%;
+width: 0;
+background: #ffffff;
+border-radius: 999px;
+transition: width 1.5s ease-out; /* dura aprox. 3s */
+}
+
+/* LOADER INICIAL */
+body.loading {
+overflow: hidden;
+}
+
+#loader-overlay {
+position: fixed;
+inset: 0;
+background: #000000;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+}
+
+.loader-content {
+text-align: center;
+}
+
+#loader-text {
+font-family: 'Poppins', sans-serif;
+font-size: 2.4rem;
+font-weight: 500;
+letter-spacing: 0.12em;
+color: #ffffff;
+opacity: 0;
+transform: translateY(25px);
+animation: floatIn 1.2s ease-out forwards;
+}
+
+/* Efecto de subida suave */
+@keyframes floatIn {
+0% { opacity: 0; transform: translateY(25px); }
+100% { opacity: 1; transform: translateY(-5px); }
+}
+
+/* Glow al aparecer cada letra */
+.letter-glow {
+animation: glow 0.4s ease-out forwards;
+}
+
+@keyframes glow {
+0% { opacity: 0; filter: blur(6px); }
+100% { opacity: 1; filter: blur(0); }
+}
+
+/* Rebote pequeño al finalizar */
+#loader-text.bounce {
+animation: bounce 0.6s ease-out;
+}
+
+@keyframes bounce {
+0% { transform: translateY(-5px); }
+50% { transform: translateY(-12px); }
+100% { transform: translateY(-5px); }
+}
+
+.loader-bar {
+width: 260px;
+max-width: 70vw;
+height: 6px;
+background: rgba(255, 255, 255, 0.18);
+border-radius: 999px;
+overflow: hidden;
+margin: 28px auto 0 auto;
+}
+
+#loader-bar-fill {
+height: 100%;
+width: 0;
+background: linear-gradient(90deg, #ffffff, #bbbbbb, #ffffff);
+background-size: 200%;
+animation: barGlow 1.5s linear infinite;
+border-radius: 999px;
+transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+@keyframes barGlow {
+0% { background-position: 0%; }
+100% { background-position: 200%; }
+}
