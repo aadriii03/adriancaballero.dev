@@ -596,7 +596,7 @@ transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  padding: 16px;
+  padding: 16px 20px;
   background: rgba(255,255,255,0.85);
   border-radius: 16px;
   border: 1.5px solid #c8c8c8;
@@ -642,7 +642,7 @@ transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
   gap: 20px;
 }
 
@@ -674,5 +674,3 @@ transition: width 3s cubic-bezier(0.25, 1, 0.3, 1);
   transform: translateY(-6px) scale(1.08);
   box-shadow: 0 12px 28px rgba(28, 61, 90, 0.18);
 }
-
-
