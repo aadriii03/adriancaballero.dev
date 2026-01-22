@@ -111,6 +111,14 @@ font-size: 18px;
 color: #1c3d5a;
 transition: all 0.3s ease;
 position: relative;
+border: none;
+cursor: pointer;
+}
+
+/* Botones de acción (idioma y tema) */
+.menu-action-btn {
+background-color: rgba(28, 61, 90, 0.15);
+border: 1px solid rgba(28, 61, 90, 0.2);
 }
 
 /* Hover */
@@ -131,7 +139,6 @@ background-color: #1c3d5a;
 color: white;
 box-shadow: 0 0 10px rgba(28, 61, 90, 0.4);
 }
-
 
 /* Efecto visual al hacer clic */
 .menu-btn:active {

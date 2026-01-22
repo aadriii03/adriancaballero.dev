@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,20 +54,28 @@
 <nav id="mobile-menu"
     class="hidden fixed top-[60px] left-0 w-full bg-white/95 backdrop-blur-md shadow-md flex 
     flex-col items-center space-y-4 py-6 text-[#1a293f] font-medium z-40 md:hidden">
-  <a href="#inicio" class="menu-btn flex items-center gap-2"><span>Inicio</span></a>
-  <a href="#sobremi" class="menu-btn flex items-center gap-2"><span>Sobre mí</span></a>
-  <a href="#tecnologias" class="menu-btn flex items-center gap-2"><span>Tecnologías</span></a>
-  <a href="#softskills" class="menu-btn flex items-center gap-2"><span>Soft Skills</span></a>
-  <a href="#proyectos" class="menu-btn flex items-center gap-2"><span>Proyectos</span></a>
-  <a href="#experiencia" class="menu-btn flex items-center gap-2"><span>Experiencia</span></a>
-  <a href="#estudios" class="menu-btn flex items-center gap-2"><span>Estudios</span></a>
-  <a href="#certificaciones" class="menu-btn flex items-center gap-2"><span>Certificaciones</span></a>
-  <a href="#contacto" class="menu-btn flex items-center gap-2"><span>Contacto</span></a>
+  <a href="#inicio" class="menu-btn flex items-center gap-2"><span data-i18n="menu.inicio">Inicio</span></a>
+  <a href="#sobremi" class="menu-btn flex items-center gap-2"><span data-i18n="menu.sobremi">Sobre mí</span></a>
+  <a href="#tecnologias" class="menu-btn flex items-center gap-2"><span data-i18n="menu.tecnologias">Tecnologías</span></a>
+  <a href="#softskills" class="menu-btn flex items-center gap-2"><span data-i18n="menu.softskills">Soft Skills</span></a>
+  <a href="#proyectos" class="menu-btn flex items-center gap-2"><span data-i18n="menu.proyectos">Proyectos</span></a>
+  <a href="#experiencia" class="menu-btn flex items-center gap-2"><span data-i18n="menu.experiencia">Experiencia</span></a>
+  <a href="#estudios" class="menu-btn flex items-center gap-2"><span data-i18n="menu.estudios">Estudios</span></a>
+  <a href="#certificaciones" class="menu-btn flex items-center gap-2"><span data-i18n="menu.certificaciones">Certificaciones</span></a>
+  <a href="#contacto" class="menu-btn flex items-center gap-2"><span data-i18n="menu.contacto">Contacto</span></a>
 </nav>
 
 
 <!-- 🔹 MENÚ LATERAL — SOLO EN PANTALLAS GRANDES -->
 <div id="side-menu" class="hidden lg:flex fixed top-1/2 right-4 transform -translate-y-1/2 flex-col items-center space-y-4 z-50">
+
+  <!-- 🌐 Botón de Idioma -->
+  <button id="lang-toggle-desktop" class="menu-btn menu-action-btn" title="Cambiar idioma">
+    <span class="text-xs font-bold">ES</span>
+  </button>
+
+  <!-- Divisor -->
+  <div class="w-8 h-[2px] bg-[#1c3d5a]/30 rounded-full my-2"></div>
 
   <!-- Inicio -->
   <a href="#inicio" class="menu-btn" title="Inicio">
@@ -163,7 +171,7 @@
 
         <a href="certificados/Adrian Caballero CV.pdf" download
           class="relative inline-block px-8 py-3 border border-[#011C40] rounded-full text-[#011C40] font-medium text-lg overflow-hidden group transition-all duration-500 ease-out">
-          <span class="shine-text">Descargar CV</span>
+          <span class="shine-text" data-i18n="hero.downloadCV">Descargar CV</span>
         </a>
       </div>
     </div>
@@ -177,7 +185,7 @@
 
 <!-- Sobre mí -->
 <section id="sobremi" class="py-24 max-w-6xl mx-auto px-6" data-animate>
-  <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Sobre mí</h3>
+  <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center" data-i18n="section.sobremi">Sobre mí</h3>
 
   <!-- Contenedor con dos columnas -->
   <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -185,10 +193,10 @@
     <!-- Texto -->
     <div class="text-justify">
       <p class="text-gray-700 leading-relaxed" id="sobremi-texto">
-        <span style="animation-delay: 0.2s;">Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, apasionado por el diseño de aplicaciones y la gestión de proyectos.</span> 
-        <span style="animation-delay: 0.4s;">Me interesa crear soluciones tecnológicas que generen un impacto real, cuidando tanto la funcionalidad como la experiencia de usuario.</span> 
-        <span style="animation-delay: 0.6s;">Me considero una persona que sabe trabajar en equipo, con comunicación efectiva y resolutivo con los problemas que se me plantean.</span> 
-        <span style="animation-delay: 0.8s;">Busco seguir formándome y aportar mi talento en proyectos que apuesten por la innovación, el trabajo colaborativo y la mejora constante.</span>
+        <span style="animation-delay: 0.2s;" data-i18n="sobremi.text1">Soy estudiante de Ingeniería Informática en la Escuela Superior de Informática de la UCLM, apasionado por el diseño de aplicaciones y la gestión de proyectos.</span> 
+        <span style="animation-delay: 0.4s;" data-i18n="sobremi.text2">Me interesa crear soluciones tecnológicas que generen un impacto real, cuidando tanto la funcionalidad como la experiencia de usuario.</span> 
+        <span style="animation-delay: 0.6s;" data-i18n="sobremi.text3">Me considero una persona que sabe trabajar en equipo, con comunicación efectiva y resolutivo con los problemas que se me plantean.</span> 
+        <span style="animation-delay: 0.8s;" data-i18n="sobremi.text4">Busco seguir formándome y aportar mi talento en proyectos que apuesten por la innovación, el trabajo colaborativo y la mejora constante.</span>
       </p>
     </div>
 
@@ -217,7 +225,7 @@
     <!-- Soft Skills -->
     <section id="softskills" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
       <div class="max-w-6xl mx-auto px-6 text-center">
-        <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]">Soft Skills</h3>
+        <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a]" data-i18n="section.softskills">Soft Skills</h3>
 
         <!-- Contenedor de insignias -->
         <div class="flex flex-wrap justify-center gap-10">
@@ -238,7 +246,7 @@
 
 
 
-            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.proactividad">
               Proactividad
             </span>
           </div>
@@ -262,7 +270,7 @@
         </svg>
 
 
-          <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+          <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.trabajo" data-i18n-html="true">
             Trabajo<br>en equipo
           </span>
         </div>
@@ -289,7 +297,7 @@
             1 .756 1.295l-2.25 1.313a.75.75 0 0 1-.756 0l-2.25-1.313a.75.75 0 1 1 .756-1.295l1.122.654V19.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
           </svg>
 
-            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.analitico">
               Pensamiento Analítico
             </span>
           </div>
@@ -310,7 +318,7 @@
 
 
 
-            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.comunicativas">
               Habilidades Comunicativas
             </span>
           </div>
@@ -338,7 +346,7 @@
             2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z" />
           </svg>
 
-            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.adaptabilidad">
               Adaptabilidad
             </span>
           </div>
@@ -362,7 +370,7 @@
           </svg>
 
 
-            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight">
+            <span class="text-[#1c3d5a] font-medium text-sm text-center leading-tight" data-i18n="softskills.objetivos">
               Orientado a Objetivos
             </span>
           </div>
@@ -380,7 +388,7 @@
 <section id="tecnologias" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6 text-center">
 
-    <h3 class="text-3xl font-semibold mb-16 text-[#1c3d5a]">
+    <h3 class="text-3xl font-semibold mb-16 text-[#1c3d5a]" data-i18n="section.tecnologias">
       Tecnologías y Herramientas
     </h3>
 
@@ -388,7 +396,7 @@
 
       <!-- Lenguajes -->
       <div class="tech-group">
-        <h4 class="tech-title">Lenguajes</h4>
+        <h4 class="tech-title" data-i18n="tecnologias.lenguajes">Lenguajes</h4>
         <div class="tech-grid">
           <div class="tech-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
           <div class="tech-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
@@ -402,7 +410,7 @@
 
       <!-- Frameworks -->
       <div class="tech-group">
-        <h4 class="tech-title">Frameworks / CMS</h4>
+        <h4 class="tech-title" data-i18n="tecnologias.frameworks">Frameworks / CMS</h4>
         <div class="tech-grid">
           <div class="tech-card"><i class="devicon-wordpress-plain colored"></i><span>WordPress</span></div>
           <div class="tech-card"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind CSS</span></div>
@@ -412,7 +420,7 @@
 
       <!-- Entornos -->
       <div class="tech-group">
-        <h4 class="tech-title">Entornos / Herramientas</h4>
+        <h4 class="tech-title" data-i18n="tecnologias.entornos">Entornos / Herramientas</h4>
         <div class="tech-grid">
           <div class="tech-card"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
           <div class="tech-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
@@ -425,7 +433,7 @@
 
       <!-- Gestión de Proyectos -->
       <div class="tech-group">
-        <h4 class="tech-title">Gestión y organización</h4>
+        <h4 class="tech-title" data-i18n="tecnologias.gestion">Gestión y organización</h4>
         <div class="tech-grid">
           <div class="tech-card"><i class="devicon-git-plain colored"></i><span>Versionado</span></div>
           <div class="tech-card"><i class="devicon-slack-plain colored"></i><span>Colaborar<span></div>
@@ -444,7 +452,7 @@
 <!-- 🔹 Proyectos -->
 <section id="proyectos" class="py-24 bg-gradient-to-br from-[#f9f9f7] to-[#ebe8e3]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">
+    <h2 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center" data-i18n="section.proyectos">
       Proyectos
     </h2>
 
@@ -458,7 +466,7 @@
         <img src="imagenes/pokedex.jpg" alt="Pokédex" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold text-[#011c40] mb-2">Pokédex</h3>
-          <p class="text-gray-700 text-sm mb-4">
+          <p class="text-gray-700 text-sm mb-4" data-i18n="proyectos.pokedex.desc">
             Aplicación de escritorio inspirada en Pokémon que permite gestionar y consultar 
             una Pokédex con información de cada pokemon, visualizar los Pokémon propios y 
             realizar combates, ya sea en modo individual contra la IA o en modo multujugador con dos jugadores.
@@ -488,7 +496,7 @@
         <img src="imagenes/inversion.png" alt="ETFPro" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold text-[#011c40] mb-2">ETFPro</h3>
-          <p class="text-gray-700 text-sm mb-4">
+          <p class="text-gray-700 text-sm mb-4" data-i18n="proyectos.etfpro.desc">
             Aplicación web para analizar ETFs y gestionar carteras de inversión, integrando APIs financieras y dashboards interactivos.
           </p>
 
@@ -522,7 +530,7 @@
         <img src="imagenes/alzheimeratlas.png" alt="AlzheimerAtlas" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold text-[#011c40] mb-2">AlzheimerAtlas</h3>
-          <p class="text-gray-700 text-sm mb-4">
+          <p class="text-gray-700 text-sm mb-4" data-i18n="proyectos.alzheimeratlas.desc">
             Aplicación de escritorio diseñada para apoyar a pacientes con Alzheimer y sus familiares,
             ofreciendo secciones de consejos, ejercicios, lectura, juegos y contenido educativo sobre la enfermedad.
           </p>
@@ -549,9 +557,9 @@
         <img src="imagenes/logoIker.png" alt="Asociación Iker - Desarrollo Web" class="w-full h-48 object-cover">
 
         <div class="p-6">
-          <h3 class="text-xl font-semibold text-[#011c40] mb-2">Asociación Iker – Desarrollo Web</h3>
+          <h3 class="text-xl font-semibold text-[#011c40] mb-2" data-i18n="proyectos.iker.title">Asociación Iker – Desarrollo Web</h3>
 
-          <p class="text-gray-700 text-sm mb-4">
+          <p class="text-gray-700 text-sm mb-4" data-i18n="proyectos.iker.desc">
             Diseño y desarrollo de una página web para la Asociación Iker, creada para mejorar la visibilidad de la entidad,
             facilitar la captación de socios y promover las donaciones.  
             La plataforma está orientada tanto a personas afectadas por la enfermedad como a potenciales colaboradores,
@@ -584,7 +592,7 @@
 <!-- Experiencia -->
 <section id="experiencia" class="py-24 bg-[#f9f7f3]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Experiencia</h3>
+    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center" data-i18n="section.experiencia">Experiencia</h3>
 
     <div class="relative border-l-2 border-gray-300 ml-6">
 
@@ -595,12 +603,12 @@
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#102134]">Diseñador Web – CFManá</h4>
-            <p class="text-sm text-gray-600 mb-2">Febrero 2023 – Mayo 2023</p>
-          <span class="inline-block bg-[#e6f5ea] text-[#2e7d32] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2">
+            <h4 class="text-lg font-semibold text-[#102134]" data-i18n="experiencia.cfmana.title">Diseñador Web – CFManá</h4>
+            <p class="text-sm text-gray-600 mb-2" data-i18n="experiencia.cfmana.date">Febrero 2023 – Mayo 2023</p>
+          <span class="inline-block bg-[#e6f5ea] text-[#2e7d32] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2" data-i18n="experiencia.cfmana.type">
             Trabajo
           </span>
-            <p class="text-gray-700 leading-relaxed">
+            <p class="text-gray-700 leading-relaxed" data-i18n="experiencia.cfmana.desc">
               Diseño e implementación de la página web para la academia CFManá, con foco en accesibilidad y experiencia de usuario.
               El proyecto se desarrolló con WIX para facilitar su actualización futura por parte del equipo.
             </p>
@@ -615,12 +623,12 @@
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#102134]">Diseñador Web – Asociación Iker</h4>
-            <p class="text-sm text-gray-600 mb-2">Septiembre 2025 – Actualidad</p>
-          <span class="inline-block bg-[#fff1f4] text-[#b13256] px-3 py-1 text-xs rounded-full border border-[#b13256]/30 mb-2">
+            <h4 class="text-lg font-semibold text-[#102134]" data-i18n="experiencia.iker.title">Diseñador Web – Asociación Iker</h4>
+            <p class="text-sm text-gray-600 mb-2" data-i18n="experiencia.iker.date">Septiembre 2025 – Actualidad</p>
+          <span class="inline-block bg-[#fff1f4] text-[#b13256] px-3 py-1 text-xs rounded-full border border-[#b13256]/30 mb-2" data-i18n="experiencia.iker.type">
             Voluntariado
           </span>
-            <p class="text-gray-700 leading-relaxed">
+            <p class="text-gray-700 leading-relaxed" data-i18n="experiencia.iker.desc">
               Desarrollo de la nueva página web de la asociación, con especial foco en voluntariado, eventos y comunicación.
               Se empleó WordPress para permitir una gestión autónoma del contenido.
             </p>
@@ -634,13 +642,13 @@
           <span class="text-white text-lg">🏆</span>
         </div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">Primer Premio – III Edición Digital Builders</h4>
-          <p class="text-sm text-gray-600 mb-2">NTT DATA Europe &amp; Latam · Noviembre 2025</p>
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="experiencia.premio.title">Primer Premio – III Edición Digital Builders</h4>
+          <p class="text-sm text-gray-600 mb-2" data-i18n="experiencia.premio.date">NTT DATA Europe &amp; Latam · Noviembre 2025</p>
           <!-- Etiquetas -->
-          <span class="inline-block bg-[#ffe9c2] text-[#8a5600] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2">
+          <span class="inline-block bg-[#ffe9c2] text-[#8a5600] px-3 py-1 text-xs rounded-full border border-[#8a5600]/30 mb-2" data-i18n="experiencia.premio.type">
         Concurso / Premio
           </span>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-gray-700 leading-relaxed" data-i18n="experiencia.premio.desc">
             Reconocimiento otorgado por NTT DATA Europe &amp; Latam y la Escuela Superior de Informática por el desarrollo 
             del mejor proyecto de consultoría tecnológica, destacando el análisis estratégico, la innovación propuesta 
             y la presentación del caso final en equipo.
@@ -655,7 +663,7 @@
 <!-- Estudios -->
 <section id="estudios" class="py-24 bg-[#f1eee8]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Estudios</h3>
+    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center" data-i18n="section.estudios">Estudios</h3>
 
     <div class="relative border-l-2 border-gray-300 ml-6">
 
@@ -666,13 +674,13 @@
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#102134]">Inglés B1 – Trinity College London</h4>
-            <p class="text-gray-700 leading-relaxed">
+            <h4 class="text-lg font-semibold text-[#102134]" data-i18n="estudios.ingles.title">Inglés B1 – Trinity College London</h4>
+            <p class="text-gray-700 leading-relaxed" data-i18n="estudios.ingles.desc" data-i18n-html="true">
               Certificado oficial de competencia comunicativa en inglés, avalado por el 
               <span class="font-medium text-[#1c3d5a]">Marco Común Europeo de Referencia para las Lenguas (MCERL)</span>,
               que evalúa comprensión auditiva, expresión oral y escrita.
             </p>
-            <span class="inline-block bg-[#e6f5ea] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20 mt-2">
+            <span class="inline-block bg-[#e6f5ea] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20 mt-2" data-i18n="estudios.ingles.level">
               Nivel B1 – CEFR
             </span>
           </div>
@@ -686,11 +694,11 @@
     </div>
     <div>
       <div class="fade-in-sequence">
-        <h4 class="text-lg font-semibold text-[#102134]">
+        <h4 class="text-lg font-semibold text-[#102134]" data-i18n="estudios.uimp.title">
           Curso de Inmersión Lingüística Inglesa – Universidad Internacional Menéndez Pelayo (UIMP)
         </h4>
         <p class="text-sm text-gray-600 mb-2">2019</p>
-        <p class="text-gray-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed" data-i18n="estudios.uimp.desc" data-i18n-html="true">
           Programa intensivo de <span class="font-medium text-[#1c3d5a]">40 horas</span> centrado en el desarrollo de la fluidez comunicativa 
           y la comprensión oral en inglés, mediante actividades prácticas con profesores nativos de Reino Unido, 
           Canadá, Estados Unidos e Irlanda.
@@ -706,12 +714,12 @@
         </div>
         <div>
           <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="estudios.grado.title">
             Grado en Ingeniería Informática – Escuela Superior de Informática (Ciudad Real), 
             Universidad de Castilla-La Mancha
           </h4>
-          <p class="text-sm text-gray-600 mb-2">2019 – Actualidad</p>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-sm text-gray-600 mb-2" data-i18n="estudios.grado.date">2019 – Actualidad</p>
+          <p class="text-gray-700 leading-relaxed" data-i18n="estudios.grado.desc" data-i18n-html="true">
             Formación universitaria orientada al desarrollo de soluciones tecnológicas y gestión de proyectos 
             informáticos, con especialización en <span class="font-medium text-[#1c3d5a]">Tecnologías de la Información (TI)</span>.
           </p>
@@ -727,7 +735,7 @@
 <!-- Certificaciones -->
 <section id="certificaciones" class="py-24 bg-[#f3f2ef]" data-animate>
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center">Certificaciones</h3>
+    <h3 class="text-3xl font-semibold mb-12 text-[#1c3d5a] text-center" data-i18n="section.certificaciones">Certificaciones</h3>
 
     <div class="relative border-l-2 border-gray-300 ml-6" data-animate-timeline>
 
@@ -738,9 +746,9 @@
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">Fundamentos de Marketing Digital</h4>
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="certificaciones.marketing.title">Fundamentos de Marketing Digital</h4>
           <p class="text-sm text-gray-600 mb-2">25/04/2020</p>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-gray-700 leading-relaxed" data-i18n="certificaciones.marketing.desc" data-i18n-html="true">
             Certificación de cursos de google junto con <span class="font-medium text-[#1c3d5a]">IAB de Europa y The Open University</span>
             en Fundamentos de Marketing Digital con una <span class="font-medium text-[#1c3d5a]">duración de 40 horas</span>.
           </p>
@@ -753,7 +761,7 @@
                       border border-[#011c40]/25
                       px-3 py-1 rounded-full
                       hover:bg-[#011c40] hover:text-white
-                      transition-all duration-300">
+                      transition-all duration-300" data-i18n="certificaciones.btn">
               Ver certificado
             </a>
           </div>
@@ -767,9 +775,9 @@
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">Fundamentos de Desarrollo de Apps Móviles</h4>
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="certificaciones.apps.title">Fundamentos de Desarrollo de Apps Móviles</h4>
           <p class="text-sm text-gray-600 mb-2">27/04/2020</p>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-gray-700 leading-relaxed" data-i18n="certificaciones.apps.desc" data-i18n-html="true">
             Certificación de cursos de google junto con la <span class="font-medium text-[#1c3d5a]">Universidad Complutense de Madrid</span> en Fundamentos de 
             Desarrollo de Apps Móviles con una <span class="font-medium text-[#1c3d5a]">duración de 40 horas</span>.
           </p>
@@ -782,7 +790,7 @@
                       border border-[#011c40]/25
                       px-3 py-1 rounded-full
                       hover:bg-[#011c40] hover:text-white
-                      transition-all duration-300">
+                      transition-all duration-300" data-i18n="certificaciones.btn">
               Ver certificado
             </a>
           </div>
@@ -796,9 +804,9 @@
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">Inmersion Lingüística Inglesa</h4>
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="certificaciones.uimp.title">Inmersión Lingüística Inglesa</h4>
           <p class="text-sm text-gray-600 mb-2">15/08/2022 - 19/08/2022</p>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-gray-700 leading-relaxed" data-i18n="certificaciones.uimp.desc" data-i18n-html="true">
             Durante el verano de 2022, fui beneficiario de una beca otorgada por la <span class="font-medium text-[#1c3d5a]">Universidad Internacional Menéndez Pelayo (UIMP)</span>
             para participar en un curso de inmersión lingüística en inglés, que consistió en una formación intensiva con hablantes 
             nativos, centradas en conversación, comunicación efectiva y habilidades sociales.
@@ -812,7 +820,7 @@
                       border border-[#011c40]/25
                       px-3 py-1 rounded-full
                       hover:bg-[#011c40] hover:text-white
-                      transition-all duration-300">
+                      transition-all duration-300" data-i18n="certificaciones.btn">
               Ver certificado
             </a>
         </div>
@@ -826,14 +834,14 @@
         </div>
         <div>
         <div class="fade-in-sequence">
-          <h4 class="text-lg font-semibold text-[#102134]">Inglés B1 – Trinity College London</h4>
+          <h4 class="text-lg font-semibold text-[#102134]" data-i18n="certificaciones.trinity.title">Inglés B1 – Trinity College London</h4>
           <p class="text-sm text-gray-600 mb-2">octubre 2019</p>
-          <p class="text-gray-700 leading-relaxed">
+          <p class="text-gray-700 leading-relaxed" data-i18n="certificaciones.trinity.desc" data-i18n-html="true">
             Acreditación oficial de nivel <span class="font-medium text-[#1c3d5a]">B1</span> según el 
             <span class="font-medium text-[#1c3d5a]">Marco Común Europeo de Referencia para las Lenguas (MCERL)</span>, 
             que certifica las competencias en comprensión auditiva, expresión oral y escrita en inglés.
           </p>
-          <span class="inline-block bg-[#e6f5ea] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20 mt-2">
+          <span class="inline-block bg-[#e6f5ea] text-[#1c3d5a] text-xs font-medium px-3 py-1 rounded-full border border-[#1c3d5a]/20 mt-2" data-i18n="estudios.ingles.level">
             Nivel B1 – CEFR 
           </span>
 
@@ -845,7 +853,7 @@
                       border border-[#011c40]/25
                       px-3 py-1 rounded-full
                       hover:bg-[#011c40] hover:text-white
-                      transition-all duration-300">
+                      transition-all duration-300" data-i18n="certificaciones.btnTitle">
               Ver título
             </a>
           </div>
@@ -859,11 +867,11 @@
         </div>
         <div>
           <div class="fade-in-sequence">
-            <h4 class="text-lg font-semibold text-[#102134]">
+            <h4 class="text-lg font-semibold text-[#102134]" data-i18n="certificaciones.cibse.title">
               Certificados de Asistencia – CIBSE, ESI Ciudad Real
             </h4>
             <p class="text-sm text-gray-600 mb-2">Mayo 2025</p>
-            <p class="text-gray-700 leading-relaxed">
+            <p class="text-gray-700 leading-relaxed" data-i18n="certificaciones.cibse.desc" data-i18n-html="true">
               Participación en los seminarios organizados por la 
               <span class="font-medium text-[#1c3d5a]">Ibero-American Conference on Software Engineering (CIBSE)</span>, 
               centrados en sostenibilidad, ingeniería de software y aplicaciones de inteligencia artificial en entornos 
@@ -878,7 +886,7 @@
                       border border-[#011c40]/25
                       px-3 py-1 rounded-full
                       hover:bg-[#011c40] hover:text-white
-                      transition-all duration-300">
+                      transition-all duration-300" data-i18n="certificaciones.btnCerts">
               Ver certificados
             </a>
           </div>
@@ -892,8 +900,8 @@
     <!-- Contacto -->
     <section id="contacto" class="py-24 bg-[#f1eee8]" data-animate>
       <div class="max-w-5xl mx-auto px-6 text-center">
-        <h3 class="text-3xl font-semibold mb-6 text-[#1c3d5a]">Contacto</h3>
-        <p class="text-gray-600 mb-8">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
+        <h3 class="text-3xl font-semibold mb-6 text-[#1c3d5a]" data-i18n="section.contacto">Contacto</h3>
+        <p class="text-gray-600 mb-8" data-i18n="contacto.text">¿Quieres contactar conmigo? Escríbeme o visita mis redes.</p>
 
         <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-base sm:text-lg">
           <a href="tel:+34666090933" 
@@ -924,7 +932,7 @@
 
   <!-- Footer -->
   <footer class="text-center py-6 text-gray-500 text-sm bg-white border-t border-gray-200">
-    © 2025 Adrián Caballero Camacho – Todos los derechos reservados.
+    <span data-i18n="footer">© Adrián Caballero Camacho</span>
   </footer>
 
   <!-- particles.js library -->
