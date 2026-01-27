@@ -39,26 +39,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   
-// Menú móvil toggle
-const toggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('mobile-menu');
-const icon = document.getElementById('menu-icon');
+// MENÚ MÓVIL DESPLEGABLE
+// Drawer móvil izquierdo + backdrop
+const toggle = document.getElementById("menu-toggle-mobile");
+const menu = document.getElementById("mobile-menu");
+const backdrop = document.getElementById("mobile-backdrop");
+const closeBtn = document.getElementById("menu-close");
+const iconMobile = document.getElementById("menu-icon-mobile");
+
+const hamburgerPath = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+const xPath = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+
+function openMenu() {
+  if (!menu || !backdrop) return;
+  backdrop.classList.remove("hidden");
+  menu.classList.remove("-translate-x-full");
+  document.body.classList.add("overflow-hidden");
+  if (iconMobile) iconMobile.innerHTML = xPath;
+}
+
+function closeMenu() {
+  if (!menu || !backdrop) return;
+  menu.classList.add("-translate-x-full");
+  backdrop.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
+  if (iconMobile) iconMobile.innerHTML = hamburgerPath;
+}
+
+function isOpen() {
+  return menu && !menu.classList.contains("-translate-x-full");
+}
 
 toggle.addEventListener('click', () => {
   menu.classList.toggle('hidden');
+
+  document.body.classList.toggle(
+    'menu-open',
+    !menu.classList.contains('hidden')
+  );
+
   if (!menu.classList.contains('hidden')) {
     icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
   } else {
     icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
   }
 });
+closeBtn?.addEventListener("click", closeMenu);
+backdrop?.addEventListener("click", closeMenu);
 
 document.querySelectorAll('#mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     menu.classList.add('hidden');
+    document.body.classList.remove('menu-open');
     icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
   });
 });
+
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && isOpen()) closeMenu();
+});
+
 
 // Particles.js
 particlesJS("particles-js", {
